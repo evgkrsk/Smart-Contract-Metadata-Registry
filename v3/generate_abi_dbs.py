@@ -12,6 +12,7 @@ CHAIN_ID_MAP = {
     "arbitrum": 42161,
     "avalanche": 43114,
     "bsc": 56,
+    "base": 8453,
     "celo": 42220,
     "fantom": 250,
     "flare": 14,

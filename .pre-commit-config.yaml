@@ -15,3 +15,8 @@ repos:
       - id: pretty-format-json
         args:
           - --autofix
+  - repo: https://github.com/adrienverge/yamllint.git
+    rev: v1.37.1
+    hooks:
+      - id: yamllint
+        args: [--format, parsable, -c, .yamllint]

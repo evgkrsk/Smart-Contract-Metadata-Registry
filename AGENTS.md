@@ -1,34 +1,24 @@
-Smart Contract Metadata Registry — repository for storing ABI
-contracts. Before making changes, always read README.md.
-Changes must comply with documentation. For manifests,
-do NOT add userdoc/devdoc to metadata.output - only abi is required.
-When creating/editing any files, ALWAYS add a newline at the end (LF, \n).
-Create PRs ONLY in your fork (evgkrsk/Smart-Contract-Metadata-Registry).
+Smart Contract Metadata Registry — repository for storing ABI contracts.
+Before making changes, always read README.md.
 
-## Working with git and GitHub
+## File Structure
+- Contract data stored as JSON files named by contract address
+- Organized in chain-specific directories (ethereum/, bsc/, polygon/, etc.)
+- Each file requires: name, chainId, address, metadata (with output.abi), version
+- Optional: checkPoints, isProxy, principalAddress
+- For proxy contracts: use origin contract ABI, set isProxy=true, set principalAddress
 
-### Pushing Changes
-- To push to your fork, YOU MUST use SSH remote: `git push evgkrsk <branch-name>`
-- Avoid HTTPS for pushing if you haven't configured tokens/passwords in your system
-- After the first push, you can use simple `git push` if upstream is configured correctly
+## Validation
+- Pre-commit hooks run automatically on commit (check-json, end-of-file-fixer, etc.)
+- Validate JSON with: `python3 check_file.py <file.json>`
+- Manifests: only include abi in metadata.output (exclude userdoc/devdoc)
+- Always add newline at end of files (LF, \n)
 
-### Working with Pre-commit Hooks
-- Hooks may automatically modify files after `git commit`
-- After committing, always check status: `git status`
-- If files appear modified:
-  1. Re-add them: `git add <file>`
-  2. Create a fix commit: `git commit -m "Fix after pre-commit hooks"`
-  3. Never use `--amend` if you've already pushed changes to remote
-
-### Creating Pull Requests via GitHub CLI
-- Ensure your branch is pushed to the remote repository
-- Basic command: `gh pr create --title "<title>" --body "<description>"`
-- When targeting YOUR FORK (not upstream), YOU MUST use --repo:
-  `gh pr create --repo evgkrsk/Smart-Contract-Metadata-Registry --head <branch-name> --base main`
-- Always verify there are commits to include: `git log main..<branch-name>`
-
-### General Recommendations
-- When working with JSON files, check structure validity
-- Create descriptive branch names: feature/<description>, fix/<description>
-- Verify all required fields are present in contract metadata
-- Ensure changes comply with current documentation
+## Git & GitHub
+- Push to fork using SSH: `git push evgkrsk <branch-name>`
+- Create PRs ONLY in your fork (evgkrsk/Smart-Contract-Metadata-Registry)
+- For PRs targeting your fork: `gh pr create --repo evgkrsk/Smart-Contract-Metadata-Registry --head <branch-name> --base main`
+- After commit, check for hook modifications: `git status`
+- If files modified by hooks: `git add <file>` and `git commit -m "Fix after pre-commit hooks"`
+- Never use `--amend` after pushing to remote
+- Use descriptive branch names: feature/<description>, fix/<description>

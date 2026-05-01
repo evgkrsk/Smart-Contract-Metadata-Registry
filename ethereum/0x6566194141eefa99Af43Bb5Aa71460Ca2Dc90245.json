@@ -1,0 +1,173 @@
+{
+  "address": "0x6566194141eefa99Af43Bb5Aa71460Ca2Dc90245",
+  "chainId": 1,
+  "checkPoints": [],
+  "isProxy": false,
+  "metadata": {
+    "compiler": {
+      "version": "0.8.20+commit.a1b79de6"
+    },
+    "language": "Solidity",
+    "output": {
+      "abi": [
+        {
+          "inputs": [],
+          "name": "AlreadyInitiated",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "EmptyBundle",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "IncorrectReenterHash",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "MissingExpectedReenter",
+          "type": "error"
+        },
+        {
+          "inputs": [],
+          "name": "initiator",
+          "outputs": [
+            {
+              "internalType": "address",
+              "name": "",
+              "type": "address"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "to",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "data",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "skipRevert",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "callbackHash",
+                  "type": "bytes32"
+                }
+              ],
+              "internalType": "struct Call[]",
+              "name": "bundle",
+              "type": "tuple[]"
+            }
+          ],
+          "name": "multicall",
+          "outputs": [],
+          "stateMutability": "payable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "components": [
+                {
+                  "internalType": "address",
+                  "name": "to",
+                  "type": "address"
+                },
+                {
+                  "internalType": "bytes",
+                  "name": "data",
+                  "type": "bytes"
+                },
+                {
+                  "internalType": "uint256",
+                  "name": "value",
+                  "type": "uint256"
+                },
+                {
+                  "internalType": "bool",
+                  "name": "skipRevert",
+                  "type": "bool"
+                },
+                {
+                  "internalType": "bytes32",
+                  "name": "callbackHash",
+                  "type": "bytes32"
+                }
+              ],
+              "internalType": "struct Call[]",
+              "name": "bundle",
+              "type": "tuple[]"
+            }
+          ],
+          "name": "reenter",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [],
+          "name": "reenterHash",
+          "outputs": [
+            {
+              "internalType": "bytes32",
+              "name": "",
+              "type": "bytes32"
+            }
+          ],
+          "stateMutability": "view",
+          "type": "function"
+        }
+      ],
+      "devdoc": {
+        "methods": {}
+      },
+      "userdoc": {
+        "methods": {}
+      }
+    },
+    "settings": {
+      "compilationTarget": {
+        "Bundler3.sol": "Bundler3"
+      },
+      "evmVersion": "shanghai",
+      "libraries": {},
+      "optimizer": {
+        "enabled": true,
+        "runs": 200
+      },
+      "remappings": []
+    },
+    "sources": {
+      "Bundler3.sol": {
+        "keccak256": "0x0000000000000000000000000000000000000000000000000000000000000000",
+        "license": "MIT",
+        "urls": [
+          "bzz-raw://0000000000000000000000000000000000000000000000000000000000000000",
+          "dweb:/ipfs/QmXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXXX"
+        ]
+      }
+    },
+    "version": 1
+  },
+  "name": "Bundler3",
+  "version": 1
+}

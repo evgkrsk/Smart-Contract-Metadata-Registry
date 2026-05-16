@@ -794,6 +794,24 @@
         {
           "inputs": [
             {
+              "internalType": "uint8",
+              "name": "id",
+              "type": "uint8"
+            },
+            {
+              "internalType": "uint128",
+              "name": "ltvzeroBitmap",
+              "type": "uint128"
+            }
+          ],
+          "name": "configureEModeCategoryLtvzeroBitmap",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
               "internalType": "address",
               "name": "asset",
               "type": "address"
@@ -881,11 +899,6 @@
             {
               "internalType": "uint256",
               "name": "scaledBalanceFromBefore",
-              "type": "uint256"
-            },
-            {
-              "internalType": "uint256",
-              "name": "scaledBalanceToBefore",
               "type": "uint256"
             }
           ],
@@ -1149,16 +1162,22 @@
           "type": "function"
         },
         {
-          "inputs": [],
-          "name": "getEModeLogic",
-          "outputs": [
+          "inputs": [
             {
-              "internalType": "address",
-              "name": "",
-              "type": "address"
+              "internalType": "uint8",
+              "name": "id",
+              "type": "uint8"
             }
           ],
-          "stateMutability": "pure",
+          "name": "getEModeCategoryLtvzeroBitmap",
+          "outputs": [
+            {
+              "internalType": "uint128",
+              "name": "",
+              "type": "uint128"
+            }
+          ],
+          "stateMutability": "view",
           "type": "function"
         },
         {

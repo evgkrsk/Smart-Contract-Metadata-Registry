@@ -236,25 +236,6 @@
             {
               "indexed": true,
               "internalType": "address",
-              "name": "asset",
-              "type": "address"
-            },
-            {
-              "indexed": false,
-              "internalType": "uint256",
-              "name": "totalDebt",
-              "type": "uint256"
-            }
-          ],
-          "name": "IsolationModeTotalDebtUpdated",
-          "type": "event"
-        },
-        {
-          "anonymous": false,
-          "inputs": [
-            {
-              "indexed": true,
-              "internalType": "address",
               "name": "collateralAsset",
               "type": "address"
             },
@@ -740,6 +721,11 @@
                   "type": "uint16"
                 },
                 {
+                  "internalType": "bool",
+                  "name": "isolated",
+                  "type": "bool"
+                },
+                {
                   "internalType": "string",
                   "name": "label",
                   "type": "string"
@@ -799,6 +785,24 @@
               "type": "uint8"
             },
             {
+              "internalType": "bool",
+              "name": "isolated",
+              "type": "bool"
+            }
+          ],
+          "name": "configureEModeCategoryIsolated",
+          "outputs": [],
+          "stateMutability": "nonpayable",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "id",
+              "type": "uint8"
+            },
+            {
               "internalType": "uint128",
               "name": "ltvzeroBitmap",
               "type": "uint128"
@@ -833,19 +837,6 @@
             }
           ],
           "name": "deposit",
-          "outputs": [],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "asset",
-              "type": "address"
-            }
-          ],
-          "name": "dropReserve",
           "outputs": [],
           "stateMutability": "nonpayable",
           "type": "function"
@@ -1191,6 +1182,25 @@
             }
           ],
           "stateMutability": "pure",
+          "type": "function"
+        },
+        {
+          "inputs": [
+            {
+              "internalType": "uint8",
+              "name": "id",
+              "type": "uint8"
+            }
+          ],
+          "name": "getIsEModeCategoryIsolated",
+          "outputs": [
+            {
+              "internalType": "bool",
+              "name": "",
+              "type": "bool"
+            }
+          ],
+          "stateMutability": "view",
           "type": "function"
         },
         {
@@ -1971,19 +1981,6 @@
               "internalType": "address",
               "name": "asset",
               "type": "address"
-            }
-          ],
-          "name": "resetIsolationModeTotalDebt",
-          "outputs": [],
-          "stateMutability": "nonpayable",
-          "type": "function"
-        },
-        {
-          "inputs": [
-            {
-              "internalType": "address",
-              "name": "asset",
-              "type": "address"
             },
             {
               "components": [
@@ -2309,6 +2306,6 @@
     }
   },
   "name": "InitializableImmutableAdminUpgradeabilityProxy",
-  "principalAddress": "0xb76c1a8da369FC39AAdCF39D2446828BcDF6Ee56",
+  "principalAddress": "0xF05Fd3cC911b4c5E36e53c00354F645E22922C9A",
   "version": 1
 }

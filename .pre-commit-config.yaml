@@ -15,8 +15,16 @@ repos:
       - id: pretty-format-json
         args:
           - --autofix
+      - id: check-case-conflict
   - repo: https://github.com/adrienverge/yamllint.git
-    rev: v1.37.1
+    rev: v1.38.0
     hooks:
       - id: yamllint
         args: [--format, parsable, -c, .yamllint]
+  - repo: local
+    hooks:
+      - id: check-lowercase-address
+        name: Contract address filename must be lowercase hex
+        entry: Filename contains uppercase hex — rename address to lowercase
+        language: fail
+        files: ^[^/]+/0x[0-9a-f]*[A-F][0-9a-fA-F]*\.json$

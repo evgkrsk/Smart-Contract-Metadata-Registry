@@ -512,5 +512,7 @@
     }
   },
   "name": "DODO",
-  "version": 1
+  "version": 1,
+  "isProxy": true,
+  "principalAddress": "0x3f770Ac673856F105b586bb393d122721265aD46"
 }
